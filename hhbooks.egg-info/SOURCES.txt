@@ -1,0 +1,7 @@
+setup.py
+hhbooks.egg-info/PKG-INFO
+hhbooks.egg-info/SOURCES.txt
+hhbooks.egg-info/dependency_links.txt
+hhbooks.egg-info/entry_points.txt
+hhbooks.egg-info/requires.txt
+hhbooks.egg-info/top_level.txt

@@ -1,0 +1,509 @@
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter);
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+:root{
+  --cover: #cc4b48;
+  --coverDark: #9c2e2b;
+  --pages: #d6d5c5;
+  --pagesDark: #e4e4e4;
+  --skin: #e8e8e0;
+  --skinLine: #cddc39;
+  --marks: #999;
+  --text: #222;
+  --boldColor:#af5f24;
+  --bg: #222;
+  --scale: 1;
+  --size: 1rem;
+  --titleSize: 1.7rem;
+  --family: "Architects Daughter", cursive;
+  --family2: "Quicksand", sans-serif;
+  --family3: 'Black Ops One', cursive;
+  --high1:254,91,5;
+  --high11:203,125,96;
+  --high2:95,183,202;
+  --high3:227,91,229;
+  --high4:255,199,1;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--family);
+  font-size: var(--size);
+}
+.moleskine-wrapper {
+
+  min-width: 10em;
+}
+.moleskine-notebook{
+  height: 500px;
+  width: 350px;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  border-radius: 5px 15px 15px 5px;
+  transform-origin: left center 0px;
+  display: inline-block;
+  margin: 100px;
+  perspective: 800px;
+  transform: scale(var(--scale))
+
+}
+
+.moleskine-notebook:hover {
+  transform: scale(var(--scale)) translateX(100%) ;
+}
+.moleskine-notebook:hover .notebook-cover {
+  transform: rotateY(-180deg) ;
+  box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.2);
+  transition: 0.5s linear;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow:none;
+}
+.moleskine-notebook:hover .notebook-skin,
+
+{
+
+  opacity:0
+}
+
+.notebook-cover {
+  background: var(--cover);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 5px 15px 15px 5px;
+  transition: 0.5s linear;
+  z-index:1;
+  transform-style: preserve-3d;
+  transform-origin: left center 0px;
+  box-shadow: inset 5px 0px 10px 0px rgba(0,0,0,0.3);
+}
+.moleskine-notebook:hover #btn{
+  display:block;
+  width: 200%;
+
+
+}
+#btn{
+  display:none;
+  opacity:0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right:0;
+  border-radius: 5px 15px 15px 5px;
+  transition: 0.5s linear 0s;
+  z-index:15;
+  transform-style: preserve-3d;
+  transform-origin: left center 0px;
+  box-shadow: inset 5px 0px 10px 0px rgba(0,0,0,0.3);
+}
+.notebook-cover:before {
+  content: "";
+  position: absolute;
+  width: 5%;
+  height: 102%;
+  top: -1%;
+  border-radius: 2px;
+  z-index:4;
+  right: 15%;
+  transition: 0.5s linear 0.5s;
+  background: linear-gradient(to right, var(--coverDark) 0%, var(--cover) 12%, var(--coverDark) 25%, var(--cover) 37%, var(--coverDark) 50%, var(--cover) 62%, var(--coverDark) 75%, var(--cover) 87%, var(--coverDark) 100%);
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.notebook-skin {
+  height: 20%;
+  background: var(--skin);
+  margin-top: 32%;
+  padding: 15%;
+  position: relative;
+  z-index:3;
+  color: var(--text);
+  text-align: left;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.5s ease;
+  font-weight: 500;
+  font-family: var(--family2);
+  font-size: var(--titleSize);
+
+}
+.notebook-skin:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  left: 0;
+  bottom: 0;
+  background: var(--skinLine);
+}
+
+.notebook-page{
+  background: var(--cover);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 5px 15px 15px 5px;
+  transition: 0.5s linear;
+  transform-style: preserve-3d;
+  transform-origin: left center 0px;
+  box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.25), inset 0px -2px 5px 0px rgba(0,0,0,0.25);
+}
+.moleskine-notebook:hover .notebook-page{
+  border-radius: 0px 15px 15px 0px;
+}
+
+
+.notebook-page:after {
+  content:"";
+  height: 97%;
+  width: 97%;
+  position: absolute;
+  top:1.5%;
+  background-color: var(--pages);
+  transform-style: preserve-3d;
+  border-radius: 5px 16px 16px 5px;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+  box-shadow: inset 10px 0px 30px 0px rgba(0,0,0,0.1);
+}
+
+
+.ruled {
+  background: linear-gradient(to bottom, var(--pages) 9px, var(--pagesDark) 1px);
+  background-size: 100% 10px;
+}
+.notebook-page.squared {
+  background-image: linear-gradient(var(--pagesDark) 1px, transparent 1px), linear-gradient(90deg, var(--pagesDark) 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px, 2px 2px, 2px 2px;
+}
+.dotted:after{
+  background: linear-gradient(90deg, var(--pages) 10px, transparent 1%) center, linear-gradient(var(--pages) 10px, transparent 1%) center, var(--marks);
+  background-size: 11px 11px;
+}
+
+.page, .page2{
+  background:none;
+  transition:0.5s linear, opacity 0.3s linear 0.2s;
+  opacity: 0;
+  z-index:5;
+}
+
+.page2{transition:0.5s linear}
+
+.moleskine-notebook:hover .page,.moleskine-notebook:hover #btn:checked ~ .page2{
+  transform: rotateY(-180deg);
+  opacity: 1;
+
+
+}
+
+/*Tables*/
+.moleskine-notebook:hover table,
+.moleskine-notebook:hover table.nutrition,
+.moleskine-notebook:hover .info,
+.moleskine-notebook:hover .cover{
+  opacity:1;
+  transition: 1s linear 0.2s
+}
+table{
+  opacity:0;
+  width:90%;
+  height:90%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  position:absolute;
+      border: 2px solid #919090;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  transition: 0.2s linear 0s;
+  z-index:10;
+
+  }
+thead tr th, strong  {
+  border-bottom: 2px solid #919090;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 225px 0/0 0 15px 0;
+  color: var(--boldColor);
+}
+
+td.under{
+  padding-left:2rem;
+  font-style: italic;
+  font-size: calc(var(--size)*0.9);
+    padding-right:2rem;
+}
+td.percentage{
+  font-weight:bold;
+}
+
+tfoot tr td ,tr.total td{
+  border-top: 2px solid #919090;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 225px 0/0 0 15px 0;
+  border-radius: 255px 0 0 0/15px 0 0 0;
+  padding-left:1rem;
+}
+
+tfoot tr td{
+  font-weight:bold;
+}
+
+.moleskine-notebook:hover #btn:checked ~ table,
+.moleskine-notebook:hover #btn:checked ~ .info,
+
+.moleskine-notebook:hover #btn:checked ~ .cover{
+  opacity:0;
+  transition: 0.2s linear 0s;
+}
+
+.moleskine-notebook:hover #btn:checked ~ .quotes,
+.moleskine-notebook:hover #btn:checked ~ .info2,
+.moleskine-notebook:hover #btn:checked ~ .artist,
+.moleskine-notebook:hover #btn:checked ~ .stamp,
+.moleskine-notebook:hover #btn:checked ~ .qr{
+  opacity:1;
+  transition: 1s linear 0.2s;
+
+}
+.moleskine-notebook:hover #btn:checked ~ .artist{
+  pointer-events:all
+}
+.moleskine-notebook:hover #btn:checked ~ .stamp{
+  opacity:0.8;
+
+}
+
+.nutrition{
+  top:70%;
+  height:50%;
+  transform:translate(-160%,-50%)
+}
+
+
+
+/*Text*/
+.info, .quotes, .info2{
+
+  opacity:0;
+  width:89%;
+  height:95%;
+  top:50%;
+  left:50%;
+  transform:translate(-160%,-50%);
+  position:absolute;
+  transition: 0.2s linear 0s;
+  z-index:10;
+}
+.info2{
+  display:flex;
+  width:93%;
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+}
+
+ul li:first-child{
+  left: -20%;
+}
+
+ul li:not(:first-child):before {
+  font-family: icons;
+  content: "o";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  font-size: 1rem;
+}
+
+
+
+.quotes{
+  max-width:90%;
+  transform:translate(-50%,-50%);
+
+}
+
+/*Cover*/
+.picture{
+  position:absolute;
+  height:60%;
+  width:60%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+.tape1{
+  position:absolute;
+  height:35%;
+  width:60%;
+}
+.top{
+  transform: translateX(-40%) translateY(-35%) rotateZ(-40deg)
+}
+.bottom{
+  transform: translateX(40%) translateY(100%) rotateZ(-33deg) scale(0.95)
+}
+
+.cover{
+  opacity:0;
+  top:32%;
+  left:-22%;
+  z-index:10;
+  position:absolute;
+  height:200px;
+  width:200px;
+  transform: translate(-50%,-50%) rotateZ(16deg) scale(0.95);
+  transition: 0.2s linear 0s;
+}
+
+
+
+
+.artist{
+  opacity:0;
+  position:absolute;
+  bottom: 29%;
+  right:186%;
+  transform:translate(-50%,-50%) rotateZ(-2deg) scale(0.75);
+  z-index:100;
+  pointer-events:none;
+  }
+
+
+
+.qr{
+  opacity:0;
+  width:100px;
+  height:100px;
+  position:absolute;
+  top:85.5%;
+  left:20%;
+  transform: translate(-50%,-50%);
+
+  mix-blend-mode:color-burn;
+}
+
+.stamp {
+  box-shadow: 0 0 0 3px blue, 0 0 0 2px blue inset;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px 2px;
+  line-height: 22px;
+  color: blue;
+  font-size: calc(var(--size)*1.5);
+  font-family: var(--family3);
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  bottom:8%;
+  left:65%;
+  transform: translate(-50%,-50%) rotate(-21deg) scale(0.8);
+  position:absolute;
+  mix-blend-mode:color-burn;
+
+}
+.player{
+
+  font-family: var(--family1);
+  font-size: 2.5rem;
+  height: 150px;
+  width:300px;
+  display:flex;
+  border: 2px solid #919090;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  box-shadow:5px 5px 1px rgba(0,0,0,0.8);
+  justify-content: space-evenly;
+  align-items:center;
+  position:absolute;
+  z-index:20;
+
+}
+
+.playerart{
+  height:120px;
+  width:120px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+
+.songname{
+  font-size: 2rem;
+}
+.play{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-contents: space-evenly;
+
+}
+
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+
+
+ }
+
+
+mark{
+  padding: 0.1em 0.7em;
+  border-radius: 0.8em 0.3em;
+  background: transparent;
+   background-image: linear-gradient(
+    to right,
+    rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.2) 4%,
+    rgba(255, 225, 0, 0.1)
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+
+
+}
+
+
+
+.m2{
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--high2),0.1),
+    rgba(var(--high2),0.2) 4%,
+    rgba(var(--high2),0.1)
+  );
+}
+.m3{
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--high3),0.1),
+    rgba(var(--high3),0.2) 4%,
+    rgba(var(--high3),0.1)
+  );
+}
+.m4{
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--high4),0.1),
+    rgba(var(--high4),0.2) 4%,
+    rgba(var(--high4),0.1)
+  );
+}
+
+.m1{
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--high1),0.1),
+    rgba(var(--high1),0.2) 4%,
+    rgba(var(--high1),0.1)
+  );
+}
+
+.m11{
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--high11),0.1),
+    rgba(var(--high11),0.2) 4%,
+    rgba(var(--high11),0.1)
+  );
+}

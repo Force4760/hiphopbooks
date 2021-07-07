@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter);
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+
+body {
+  background: #222;
+  padding: 0;
+  color: #DDD;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.3rem;
+}
+
+
+
+a {
+  text-decoration: under-line;
+  color: inherit;
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: auto
+}
+
+h3 {
+  text-align: center;
+  color: #AAA;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+
+
+}
+
+p {
+  margin-bottom: 3rem;
+}
+
+h4{
+  background-color: rgba(200,180,10,0.12);
+display: inline;
+padding: 10px 1.2rem;
+border-radius: 255px 15px 225px 15px/23px 245px 22px 255px;
+color: inherit
+
+
+}
+
+
+
+ul li {
+  list-style: none;
+  position: relative;
+  text-decoration: none;
+
+}
+
+ul li a{
+  text-decoration: none;
+}
+
+ul li:before {
+  content: "└─";
+  position: absolute;
+  left: -2rem;
+  top: 0.2rem;
+  font-size: 1rem;
+}
+

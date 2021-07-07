@@ -1,0 +1,19 @@
+nav {
+  color: #DDD;
+  font-size: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1.5rem;
+
+
+font-family: "Architects Daughter", cursive;
+}
+nav .nav-info{
+  font-size: 1.5rem;
+}
+nav a{
+
+text-decoration: none;
+}

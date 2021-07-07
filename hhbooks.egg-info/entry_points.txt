@@ -1,0 +1,3 @@
+[console_scripts]
+hhbooks = hhbooks.code.__main__:main
+

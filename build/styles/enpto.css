@@ -1,0 +1,15 @@
+.cover{
+  opacity:0;
+  top:37%;
+  left:-18%;
+  z-index:10;
+  position:absolute;
+  height:200px;
+  width:200px;
+  transform: translate(-50%,-50%) rotateZ(16deg) scale(0.95);
+  transition: 0.2s linear 0s;
+}
+
+.bill tbody tr td{
+  font-size: 0.9rem;
+}
