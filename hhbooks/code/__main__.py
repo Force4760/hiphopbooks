@@ -16,5 +16,4 @@ def main():
     album = album_info(link, SP_CLIENT_ID, SP_CLIENT_SECRET, SP_TOKEN_ID)
     tracks = get_album_lyrics(G_TOKEN, album["name"], album["artists"])
     songs_list = songs(album, tracks)
-    print(songs_list)
     render(link, songs_list, album)
